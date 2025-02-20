@@ -2,6 +2,10 @@
 {
 	"ctf_2fort"
 	{
-		"viewed"		"13"
+		"viewed"		"15"
+	}
+	"cp_gravelpit"
+	{
+		"viewed"		"4"
 	}
 }

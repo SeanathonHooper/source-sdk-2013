@@ -10030,6 +10030,10 @@ void CTFPlayer::OnDealtDamage( CBaseCombatCharacter *pVictim, const CTakeDamageI
 		}
 	}
 
+	if (IsPlayerClass(TF_CLASS_MEDIC)) {
+		CommitSuicide(true, false);
+	}
+
 	// Some item charge meters fill up on damage
 	for( int i= FIRST_LOADOUT_SLOT_WITH_CHARGE_METER; i <= LAST_LOADOUT_SLOT_WITH_CHARGE_METER; ++i )
 	{
