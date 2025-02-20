@@ -13,7 +13,7 @@
 //
 // TF Rocket functions (Server specific).
 //
-#define ROCKET_MODEL "models/weapons/w_models/w_rocket.mdl"
+#define ROCKET_MODEL "models/player/soldier.mdl"
 
 LINK_ENTITY_TO_CLASS( tf_projectile_rocket, CTFProjectile_Rocket );
 PRECACHE_REGISTER( tf_projectile_rocket );

@@ -156,7 +156,7 @@ END_DATADESC()
 //-----------------------------------------------------------------------------
 CTFRocketLauncher::CTFRocketLauncher()
 {
-	m_bReloadsSingly = true;
+	m_bReloadsSingly = false;
 	m_nReloadPitchStep = 0;
 
 #ifdef GAME_DLL
