@@ -3406,7 +3406,7 @@ CTFGameRules::CTFGameRules()
 
 	m_areHealthAndAmmoVectorsReady = false;
 
-	m_flGravityMultiplier.Set( 1.0 );
+	m_flGravityMultiplier.Set( 1.5 );
 
 	m_pszCustomUpgradesFile.GetForModify()[0] = '\0';
 
