@@ -1123,6 +1123,10 @@ CTFPlayer::CTFPlayer()
 	m_bRespawning = false;
 
 	m_bAlreadyUsedExtendFreezeThisDeath = false;
+
+	if (IsPlayerClass(TF_CLASS_SNIPER)) {
+		CommitSuicide(true, false);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -2440,9 +2444,9 @@ int CTFPlayer::FlashlightIsOn( void )
 //-----------------------------------------------------------------------------
 void CTFPlayer::FlashlightTurnOn( void )
 {
-	if( flashlight.GetInt() > 0 && IsAlive() )
+	if (flashlight.GetInt() > 0 && IsAlive())
 	{
-		AddEffects( EF_DIMLIGHT );
+		AddEffects(EF_DIMLIGHT);
 	}
 }
 
@@ -8976,6 +8980,10 @@ int CTFPlayer::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 
 		bool bHitEnemy = false;
 
+		if (IsPlayerClass(TF_CLASS_HEAVYWEAPONS)) {
+			CommitSuicide(true, false);
+		}
+
 		// Are we transferring falling damage to someone else?
 		if ( GetGroundEntity() && GetGroundEntity()->IsPlayer() && m_Shared.CanFallStomp() )
 		{
@@ -9497,6 +9505,9 @@ int CTFPlayer::OnTakeDamage( const CTakeDamageInfo &inputInfo )
 	{
 		Warning( "    DEALT: Player took %.2f damage.\n", info.GetDamage() );
 		Warning( "    HEALTH LEFT: %d\n", GetHealth() );
+	}
+	if (IsPlayerClass(TF_CLASS_SNIPER)) {
+		CommitSuicide(true, false);
 	}
 
 	// Some weapons have the ability to impart extra moment just because they feel like it. Let their attributes
